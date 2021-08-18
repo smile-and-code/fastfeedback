@@ -18,11 +18,9 @@ export default function Home() {
         <h1 className={styles.title}>Fast Feedback</h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Current user:
+          <code className={styles.code}>{auth.user?.email}</code>
         </p>
-
-        <div>{auth?.user?.email}</div>
 
         {auth.user ? (
           <button onClick={(e) => auth.signout()}>Sign Out</button>
