@@ -231,6 +231,14 @@
   dependencies:
     "@chakra-ui/utils" "1.8.2"
 
+"@chakra-ui/icons@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-1.0.15.tgz#90b0e3c2c161c5a100d6b83a277941b22945f880"
+  integrity sha512-MMuPwmeCil9vAXceIN/Fxn6CNHbhkLofFQaKUfs+UaBsviiU2tvS0nqGaxm/9FNzLr5ithPVWpbz3uV7DXc77g==
+  dependencies:
+    "@chakra-ui/icon" "1.1.11"
+    "@types/react" "^17.0.0"
+
 "@chakra-ui/image@1.0.18":
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-1.0.18.tgz#9b3b8ee5a9fac5f05699b4fc1705b30aea2073f3"
@@ -1227,6 +1235,25 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/prop-types@*":
+  version "15.7.4"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
+  integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
+
+"@types/react@^17.0.0":
+  version "17.0.18"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.18.tgz#4109cbbd901be9582e5e39e3d77acd7b66bb7fbe"
+  integrity sha512-YTLgu7oS5zvSqq49X5Iue5oAbVGhgPc5Au29SJC4VeE17V6gASoOxVkUDy9pXFMRFxCWCD9fLeweNFizo3UzOg==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/scheduler@*":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
 "@types/tinycolor2@1.4.2":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@types/tinycolor2/-/tinycolor2-1.4.2.tgz#721ca5c5d1a2988b4a886e35c2ffc5735b6afbdf"
@@ -1942,6 +1969,11 @@ depd@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+
+dequal@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.2.tgz#85ca22025e3a87e65ef75a7a437b35284a7e319d"
+  integrity sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==
 
 des.js@^1.0.0:
   version "1.0.1"
@@ -3776,6 +3808,11 @@ react-focus-lock@2.5.0:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
+react-hook-form@^7.12.2:
+  version "7.12.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.12.2.tgz#2660afbf03c4ef360a9314ebf46ce3d972296c77"
+  integrity sha512-cpxocjrgpMAJCMJQR51BQhMoEx80/EQqePNihMTgoTYTqCRbd2GExi+N4GJIr+cFqrmbwNj9wxk5oLWYQsUefg==
+
 react-is@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
@@ -4288,6 +4325,13 @@ supports-color@^8.0.0:
   integrity sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==
   dependencies:
     has-flag "^4.0.0"
+
+swr@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.5.6.tgz#70bfe9bc9d7ac49a064be4a0f4acf57982e55a31"
+  integrity sha512-Bmx3L4geMZjYT5S2Z6EE6/5Cx6v1Ka0LhqZKq8d6WL2eu9y6gHWz3dUzfIK/ymZVHVfwT/EweFXiYGgfifei3w==
+  dependencies:
+    dequal "2.0.2"
 
 table@^6.0.9:
   version "6.7.1"

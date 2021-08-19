@@ -1,29 +1,33 @@
 import Head from 'next/head';
-import { Button, Code, Heading, Text } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
 import { useAuth } from '@/lib/auth';
+import Image from 'next/image';
+import logo from '../public/logo.png';
 
 export default function Home() {
   const auth = useAuth();
 
   return (
-    <div>
+    <Flex
+      as="main"
+      direction="column"
+      align="center"
+      justify="center"
+      margin="auto"
+    >
       <Head>
         <title>Bibleverses Admin</title>
       </Head>
 
-      <main>
-        <Heading>Bibleverses Admin</Heading>
+      <Image src={logo} width={100} height={100} alt="Bibleverses logo" />
 
-        <Text>
-          Current user: <Code>{auth.user?.email}</Code>
-        </Text>
-
-        {auth.user ? (
-          <Button onClick={(e) => auth.signout()}>Sign Out</Button>
-        ) : (
-          <Button onClick={(e) => auth.signinWithGoogle()}>Sign In</Button>
-        )}
-      </main>
-    </div>
+      {auth.user ? (
+        <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+      ) : (
+        <Button size="sm" onClick={(e) => auth.signinWithGoogle()}>
+          Sign In
+        </Button>
+      )}
+    </Flex>
   );
 }
