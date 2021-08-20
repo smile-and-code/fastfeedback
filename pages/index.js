@@ -1,10 +1,12 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Button, Flex } from '@chakra-ui/react';
 import { useAuth } from '@/lib/auth';
 import Image from 'next/image';
 import logo from '../public/logo.png';
 
-export default function Home() {
+const Home = () => {
+  const router = useRouter();
   const auth = useAuth();
 
   return (
@@ -22,7 +24,10 @@ export default function Home() {
       <Image src={logo} width={100} height={100} alt="Bibleverses logo" />
 
       {auth.user ? (
-        <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+        // <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+        <Button onClick={(e) => router.push('/dashboard')}>
+          View Dashboard
+        </Button>
       ) : (
         <Button size="sm" onClick={(e) => auth.signinWithGoogle()}>
           Sign In
@@ -30,4 +35,6 @@ export default function Home() {
       )}
     </Flex>
   );
-}
+};
+
+export default Home;

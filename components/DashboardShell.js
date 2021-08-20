@@ -37,7 +37,6 @@ const DashboardShell = ({ children }) => {
                   height={45}
                   alt="Bibleverses logo"
                 />
-                {/* <Icon name="logo" size="24px" mr={8} /> */}
               </Link>
             </NextLink>
             <NextLink href="/sites" passHref>

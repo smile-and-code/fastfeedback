@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-// import { mutate } from 'swr';
+import { mutate } from 'swr';
 import {
   Modal,
   ModalOverlay,
@@ -46,11 +46,18 @@ const AddSiteModal = ({ children }) => {
       duration: 5000,
       isClosable: true
     });
+    mutate(
+      '/api/sites',
+      async (data) => ({
+        sites: [{ id, ...newSite }, ...data.sites]
+      }),
+      false
+    );
     // mutate(
     //   ['/api/sites', auth.user.token],
-    //   async (data) => ({
-    //     sites: [{ id, ...newSite }, ...data.sites]
-    //   }),
+    // async (data) => ({
+    //   sites: [{ id, ...newSite }, ...data.sites]
+    // }),
     //   false
     // );
     onClose();
@@ -63,7 +70,7 @@ const AddSiteModal = ({ children }) => {
         onClick={onOpen}
         backgroundColor="gray.900"
         color="white"
-        fontWeight="medium"
+        fontWeight="semibold"
         _hover={{ bg: 'gray.700' }}
         _active={{
           bg: 'gray.800',
@@ -100,7 +107,7 @@ const AddSiteModal = ({ children }) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={onClose} mr={3} fontWeight="medium">
+            <Button onClick={onClose} mr={3} fontWeight="semibold">
               Cancel
             </Button>
             <Button
