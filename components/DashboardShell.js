@@ -1,7 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { Box, Flex, Link, Avatar, Icon } from '@chakra-ui/react';
+import { Box, Flex, Link, Avatar, Button } from '@chakra-ui/react';
 
 import { useAuth } from '@/lib/auth';
 // import Footer from './Footer';
@@ -9,6 +9,7 @@ import logo from '../public/logo.png';
 
 const DashboardShell = ({ children }) => {
   const { user } = useAuth();
+  const auth = useAuth();
 
   return (
     <Box backgroundColor="gray.100" h="100vh">
@@ -39,7 +40,7 @@ const DashboardShell = ({ children }) => {
                 />
               </Link>
             </NextLink>
-            <NextLink href="/sites" passHref>
+            <NextLink href="/dashboard" passHref>
               <Link mx={4}>Sites</Link>
             </NextLink>
             <NextLink href="/feedback" passHref>
@@ -47,6 +48,8 @@ const DashboardShell = ({ children }) => {
             </NextLink>
           </Flex>
           <Flex justifyContent="center" alignItems="center">
+            <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+
             <NextLink href="/account" passHref>
               <Link>
                 <Avatar size="sm" src={user?.photoUrl} />

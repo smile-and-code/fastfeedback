@@ -47,19 +47,12 @@ const AddSiteModal = ({ children }) => {
       isClosable: true
     });
     mutate(
-      '/api/sites',
+      ['/api/sites', auth.user.token],
       async (data) => ({
         sites: [{ id, ...newSite }, ...data.sites]
       }),
       false
     );
-    // mutate(
-    //   ['/api/sites', auth.user.token],
-    // async (data) => ({
-    //   sites: [{ id, ...newSite }, ...data.sites]
-    // }),
-    //   false
-    // );
     onClose();
   };
 

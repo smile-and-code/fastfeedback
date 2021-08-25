@@ -11,21 +11,6 @@ export const LogoIcon = createIcon({
   viewBox: '0 0 46 32'
 });
 
-export const GithubIcon = createIcon({
-  displayName: 'GithubIcon',
-  path: (
-    <g
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-    </g>
-  )
-});
-
 export const GoogleIcon = createIcon({
   displayName: 'GoogleIcon',
   path: (
@@ -49,4 +34,26 @@ export const GoogleIcon = createIcon({
     </g>
   ),
   viewBox: '0 0 533.5 544.3'
+});
+
+export const FacebookIcon = createIcon({
+  displayName: 'FacebookIcon',
+  path: (
+    <path
+      d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"
+      fill="currentColor"
+    />
+  ),
+  viewBox: '0 0 24 24'
+});
+
+export const TwitterIcon = createIcon({
+  displayName: 'TwitterIcon',
+  path: (
+    <path
+      d="M22,5.8a8.49,8.49,0,0,1-2.36.64,4.13,4.13,0,0,0,1.81-2.27,8.21,8.21,0,0,1-2.61,1,4.1,4.1,0,0,0-7,3.74A11.64,11.64,0,0,1,3.39,4.62a4.16,4.16,0,0,0-.55,2.07A4.09,4.09,0,0,0,4.66,10.1,4.05,4.05,0,0,1,2.8,9.59v.05a4.1,4.1,0,0,0,3.3,4A3.93,3.93,0,0,1,5,13.81a4.9,4.9,0,0,1-.77-.07,4.11,4.11,0,0,0,3.83,2.84A8.22,8.22,0,0,1,3,18.34a7.93,7.93,0,0,1-1-.06,11.57,11.57,0,0,0,6.29,1.85A11.59,11.59,0,0,0,20,8.45c0-.17,0-.35,0-.53A8.43,8.43,0,0,0,22,5.8Z"
+      fill="currentColor"
+    />
+  ),
+  viewBox: '0 0 24 24'
 });
