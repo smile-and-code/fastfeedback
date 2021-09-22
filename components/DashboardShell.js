@@ -1,15 +1,27 @@
 import React from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { Box, Flex, Link, Avatar, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Link,
+  Avatar,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  Text,
+  Heading
+} from '@chakra-ui/react';
 
 import { useAuth } from '@/lib/auth';
 // import Footer from './Footer';
 import logo from '../public/logo.png';
 
 const DashboardShell = ({ children }) => {
-  const { user } = useAuth();
-  const auth = useAuth();
+  const { user, signout } = useAuth();
 
   return (
     <Box backgroundColor="gray.100" h="100vh">
@@ -48,13 +60,25 @@ const DashboardShell = ({ children }) => {
             </NextLink>
           </Flex>
           <Flex justifyContent="center" alignItems="center">
-            <Button onClick={(e) => auth.signout()}>Sign Out</Button>
-
-            <NextLink href="/account" passHref>
-              <Link>
+            <Menu>
+              <MenuButton>
                 <Avatar size="sm" src={user?.photoUrl} />
-              </Link>
-            </NextLink>
+              </MenuButton>
+              <MenuList>
+                <Flex direction="column" align={'center'}>
+                  <Avatar size="md" src={user?.photoUrl} mb={2} />
+                  <Heading letterSpacing="-1px" size="md">
+                    {user?.name}
+                  </Heading>
+                  <Text color="gray.500" fontSize="sm">
+                    {user?.email}
+                  </Text>
+                </Flex>
+
+                <MenuDivider />
+                <MenuItem onClick={() => signout()}>Log Out</MenuItem>
+              </MenuList>
+            </Menu>
           </Flex>
         </Flex>
       </Flex>
