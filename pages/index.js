@@ -19,7 +19,6 @@ const Home = () => {
       margin="auto"
     >
       <Head>
-        <title>Bibleverses Admin</title>
         <script
           dangerouslySetInnerHTML={{
             __html: `

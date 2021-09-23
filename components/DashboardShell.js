@@ -60,7 +60,7 @@ const DashboardShell = ({ children }) => {
             </NextLink>
           </Flex>
           <Flex justifyContent="center" alignItems="center">
-            <Menu>
+            <Menu isLazy id="account-menu">
               <MenuButton>
                 <Avatar size="sm" src={user?.photoUrl} />
               </MenuButton>
