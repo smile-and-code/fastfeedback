@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 import { useAuth } from '@/lib/auth';
 import fetcher from '@/utils/fetcher';
-// import Page from '@/components/Page';
+import Page from '@/components/Page';
 import DashboardShell from '@/components/DashboardShell';
 import FeedbackTable from '@/components/FeedbackTable';
 import FeedbackEmptyState from '@/components/FeedbackEmptyState';
@@ -34,11 +34,10 @@ const AllFeedback = () => {
   );
 };
 
-// const AllFeedbackPage = () => (
-//   <Page name="All Feedback" path="/feedback">
-//     <AllFeedback />
-//   </Page>
-// );
-// export default AllFeedbackPage;
+const AllFeedbackPage = () => (
+  <Page name="All Feedback" path="/feedback">
+    <AllFeedback />
+  </Page>
+);
 
-export default AllFeedback;
+export default AllFeedbackPage;

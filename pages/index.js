@@ -23,7 +23,7 @@ const Home = () => {
           dangerouslySetInnerHTML={{
             __html: `
               if (document.cookie && document.cookie.includes('bibleverses-auth')) {
-                window.location.href = "/dashboard"
+                window.location.href = "/sites"
               }
             `
           }}
@@ -33,9 +33,7 @@ const Home = () => {
       <Image src={logo} width={100} height={100} alt="Bibleverses logo" />
 
       {auth.user ? (
-        <Button onClick={(e) => router.push('/dashboard')}>
-          View Dashboard
-        </Button>
+        <Button onClick={(e) => router.push('/sites')}>View Dashboard</Button>
       ) : (
         <Stack spacing={4}>
           <Button

@@ -8,7 +8,7 @@ import { createFeedback } from '@/lib/db';
 import fetcher from '@/utils/fetcher';
 import Feedback from '@/components/Feedback';
 import DashboardShell from '@/components/DashboardShell';
-// import SiteHeader from '@/components/SiteHeader';
+import SiteHeader from '@/components/SideHeader';
 // import LoginButtons from '@/components/LoginButtons';
 
 const FeedbackPage = () => {
@@ -77,12 +77,12 @@ const FeedbackPage = () => {
 
   return (
     <DashboardShell>
-      {/* <SiteHeader
+      <SiteHeader
         isSiteOwner={site?.authorId === user?.uid}
         site={site}
         siteId={siteId}
         route={route}
-      /> */}
+      />
       <Box
         display="flex"
         mx={4}
