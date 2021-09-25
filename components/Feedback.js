@@ -9,6 +9,7 @@ import {
   Code
 } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
+import { FacebookIcon, GoogleIcon, TwitterIcon } from '@/styles/icons';
 // import ReactMarkdown from 'react-markdown';
 
 // import { useTheme } from '@/utils/useTheme';
@@ -42,7 +43,17 @@ const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
           {author}
         </Heading>
         {settings?.icons && (
-          <Icon name={provider.slice(0, -4)} size="13px" ml="6px" />
+          <Icon
+            as={
+              provider.includes('google')
+                ? GoogleIcon
+                : provider.includes('facebook')
+                ? FacebookIcon
+                : TwitterIcon
+            }
+            size="13px"
+            ml="6px"
+          />
         )}
       </Flex>
       {settings?.timestamp && (
@@ -50,6 +61,8 @@ const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
           {format(parseISO(createdAt), 'PPpp')}
         </Text>
       )}
+
+      <p>{text}</p>
       {/* <Box color={textColor[colorMode]}> */}
       {/* <ReactMarkdown
           source={text}

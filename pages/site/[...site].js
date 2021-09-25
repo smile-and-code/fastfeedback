@@ -17,8 +17,9 @@ const FeedbackPage = () => {
   const router = useRouter();
   const siteAndRoute = router.query?.site;
 
-  const siteId = siteAndRoute[0] || null;
-  const route = siteAndRoute[1] || null;
+  const siteId = siteAndRoute ? siteAndRoute[0] : null;
+  const route = siteAndRoute ? siteAndRoute[1] : null;
+
   const feedbackApi = route
     ? `/api/feedback/${siteId}/${route}`
     : `/api/feedback/${siteId}`;
@@ -45,11 +46,11 @@ const FeedbackPage = () => {
     };
 
     inputEl.current.value = '';
-    createFeedback(newFeedback);
+    const { id } = createFeedback(newFeedback);
     mutate(
       feedbackApi,
       async (data) => ({
-        feedback: [newFeedback, ...data.feedback]
+        feedback: [{ id, ...newFeedback }, ...data.feedback]
       }),
       false
     );
@@ -98,6 +99,7 @@ const FeedbackPage = () => {
               placeholder="Leave a comment"
               isDisabled={!user}
               h="100px"
+              bg="white"
             />
             {!loading && <LoginOrLeaveFeedback />}
           </FormControl>

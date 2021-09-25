@@ -15,6 +15,7 @@ import {
   useToast,
   useDisclosure
 } from '@chakra-ui/react';
+import { SettingsIcon } from '@chakra-ui/icons';
 
 import { updateSite } from '@/lib/db';
 
@@ -45,8 +46,8 @@ const EditSiteModal = ({ settings, siteId, children }) => {
         onClick={onOpen}
         backgroundColor="gray.900"
         color="white"
-        fontWeight="medium"
-        leftIcon="settings"
+        fontWeight="semibold"
+        leftIcon={<SettingsIcon />}
         _hover={{ bg: 'gray.700' }}
         _active={{
           bg: 'gray.800',
@@ -61,52 +62,49 @@ const EditSiteModal = ({ settings, siteId, children }) => {
           <ModalHeader fontWeight="bold">Edit Site</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <FormControl>
+            <FormControl display="flex" alignItems="center">
               <Switch
                 key={settings?.timestamp}
-                name="timestamp"
-                ref={register()}
-                color="green"
+                {...register('timestamp')}
+                colorScheme="green"
                 defaultIsChecked={settings?.timestamp}
               />
-              <FormLabel ml={2} htmlFor="show-timestamp">
+              <FormLabel ml={2} htmlFor="show-timestamp" mb="0">
                 Show Timestamp
               </FormLabel>
             </FormControl>
-            <FormControl>
+            <FormControl display="flex" alignItems="center">
               <Switch
                 key={settings?.icons}
-                name="icons"
-                ref={register()}
-                color="green"
+                {...register('icons')}
+                colorScheme="green"
                 defaultIsChecked={settings?.icons}
               />
-              <FormLabel ml={2} htmlFor="show-icons">
+              <FormLabel ml={2} htmlFor="show-icons" mb="0">
                 Show Icon
               </FormLabel>
             </FormControl>
-            <FormControl>
+            <FormControl display="flex" alignItems="center">
               <Switch
                 key={settings?.ratings}
-                name="ratings"
-                ref={register()}
-                color="green"
+                {...register('ratings')}
+                colorScheme="green"
                 defaultIsChecked={settings?.ratings}
               />
-              <FormLabel ml={2} htmlFor="show-ratings">
+              <FormLabel ml={2} htmlFor="show-ratings" mb="0">
                 Show Ratings
               </FormLabel>
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={onClose} mr={3} fontWeight="medium">
+            <Button onClick={onClose} mr={3} fontWeight="semibold">
               Cancel
             </Button>
             <Button
-              backgroundColor="#99FFFE"
-              color="#194D4C"
-              fontWeight="medium"
+              id="edit-site-button"
+              colorScheme="brand"
+              fontWeight="semibold"
               type="submit"
             >
               Update
