@@ -9,7 +9,7 @@ import fetcher from '@/utils/fetcher';
 import Feedback from '@/components/Feedback';
 import DashboardShell from '@/components/DashboardShell';
 import SiteHeader from '@/components/SideHeader';
-// import LoginButtons from '@/components/LoginButtons';
+import LoginButtons from '@/components/LoginButtons';
 
 const FeedbackPage = () => {
   const { user, loading } = useAuth();
@@ -73,8 +73,9 @@ const FeedbackPage = () => {
       >
         Leave Feedback
       </Button>
-    ) : null;
-  // <LoginButtons />
+    ) : (
+      <LoginButtons />
+    );
 
   return (
     <DashboardShell>
