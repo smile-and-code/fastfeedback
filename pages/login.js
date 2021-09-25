@@ -96,12 +96,18 @@ const Login = () => {
         <Button
           id="login"
           type="submit"
-          colorScheme="brand"
+          backgroundColor="gray.900"
+          color="white"
           isLoading={loading}
           fontWeight="semibold"
           mt={4}
           h="50px"
           fontSize="lg"
+          _hover={{ bg: 'gray.700' }}
+          _active={{
+            bg: 'gray.800',
+            transform: 'scale(0.95)'
+          }}
         >
           Login
         </Button>
