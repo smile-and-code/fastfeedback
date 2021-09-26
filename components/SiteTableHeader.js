@@ -9,7 +9,6 @@ import {
 
 import AddSiteModal from './AddSiteModal';
 
-
 const SiteTableHeader = () => (
   <Box mx={4}>
     <Breadcrumb>

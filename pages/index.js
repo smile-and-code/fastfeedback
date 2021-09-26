@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 import { Button, Flex, Stack } from '@chakra-ui/react';
 import { useAuth } from '@/lib/auth';
 import Image from 'next/image';
-import logo from '../public/logo.png';
+import logo from '@/public/logo.png';
+
 import { FacebookIcon, GoogleIcon, TwitterIcon } from '@/styles/icons';
 
 const Home = () => {

@@ -1,9 +1,10 @@
 import { Flex, Link } from '@chakra-ui/react';
 
-// import { useTheme } from '@/utils/useTheme';
+import { useTheme } from '@/utils/useTheme';
 
 export default function FeedbackLink({ paths }) {
-  //   const colorMode = useTheme();
+  const colorMode = useTheme();
+  
   const linkColor = {
     light: 'gray.900',
     dark: 'gray.100'
@@ -19,7 +20,7 @@ export default function FeedbackLink({ paths }) {
       direction={['column', 'row']}
     >
       <Link
-        // color={linkColor[colorMode]}
+        color={linkColor[colorMode]}
         fontWeight="semibold"
         fontSize="sm"
         href={`/site/${paths.join('/')}`}
