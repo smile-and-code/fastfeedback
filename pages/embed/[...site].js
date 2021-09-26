@@ -38,6 +38,7 @@ export async function getStaticPaths() {
 const EmbeddedFeedbackPage = ({ initialFeedback, site }) => {
   const router = useRouter();
   const colorMode = useTheme();
+
   const textColor = {
     light: 'gray.900',
     dark: 'gray.200'
