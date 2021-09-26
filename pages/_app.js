@@ -1,16 +1,20 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
+import { MDXProvider } from '@mdx-js/react';
 
 import { AuthProvider } from '@/lib/auth';
 import theme from '@/styles/theme';
 import SEO from 'next-seo.config';
+import MDXComponents from '@/components/MDXComponents';
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <AuthProvider>
-        <DefaultSeo {...SEO} />
-        <Component {...pageProps} />
+        <MDXProvider components={MDXComponents}>
+          <DefaultSeo {...SEO} />
+          <Component {...pageProps} />
+        </MDXProvider>
       </AuthProvider>
     </ChakraProvider>
   );

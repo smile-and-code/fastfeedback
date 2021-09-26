@@ -10,21 +10,22 @@ import {
 } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 import { FacebookIcon, GoogleIcon, TwitterIcon } from '@/styles/icons';
-// import ReactMarkdown from 'react-markdown';
 
-// import { useTheme } from '@/utils/useTheme';
-// import MDXComponents from './MDXComponents';
+import { useTheme } from '@/utils/useTheme';
 
 const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
-  //   const colorMode = useTheme();
+  const colorMode = useTheme();
+
   const authorColor = {
     light: 'gray.900',
     dark: 'gray.200'
   };
+
   const textColor = {
     light: 'gray.800',
     dark: 'gray.300'
   };
+
   const dividerColor = {
     light: 'gray.200',
     dark: 'gray.700'
@@ -37,7 +38,7 @@ const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
           size="sm"
           as="h3"
           mb={0}
-          //   color={authorColor[colorMode]}
+          color={authorColor[colorMode]}
           fontWeight="semibold"
         >
           {author}
@@ -62,33 +63,14 @@ const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
         </Text>
       )}
 
-      <p>{text}</p>
-      {/* <Box color={textColor[colorMode]}> */}
-      {/* <ReactMarkdown
-          source={text}
-          renderers={{
-            paragraph: MDXComponents.p,
-            blockquote: MDXComponents.blockquote,
-            link: MDXComponents.a,
-            list: MDXComponents.ul,
-            listItem: MDXComponents.li,
-            table: MDXComponents.table,
-            tableHead: MDXComponents.th,
-            tableCell: MDXComponents.td,
-            code: ({ value }) => (
-              <pre>
-                <Code borderRadius={8} p={4} my={4}>
-                  {value}
-                </Code>
-              </pre>
-            ),
-            inlineCode: MDXComponents.inlineCode
-          }}
-        /> */}
-      {/* </Box> */}
-      {/* {!isLast && (
+      <Box color={textColor[colorMode]}>
+        <Text as="p" mt={4} lineHeight="tall">
+          {text}
+        </Text>
+      </Box>
+      {!isLast && (
         <Divider borderColor={dividerColor[colorMode]} mt={6} mb={6} />
-      )} */}
+      )}
     </Box>
   );
 };

@@ -6,7 +6,6 @@ import {
   Flex,
   Link,
   Avatar,
-  Button,
   Menu,
   MenuButton,
   MenuList,
@@ -17,8 +16,8 @@ import {
 } from '@chakra-ui/react';
 
 import { useAuth } from '@/lib/auth';
-// import Footer from './Footer';
-import logo from '../public/logo.png';
+import Footer from './Footer';
+import logo from '@/public/logo.png';
 
 const DashboardShell = ({ children }) => {
   const { user, signout } = useAuth();
@@ -85,7 +84,7 @@ const DashboardShell = ({ children }) => {
       <Flex margin="0 auto" direction="column" maxW="1250px" px={[0, 8, 8]}>
         {children}
       </Flex>
-      {/* <Footer /> */}
+      <Footer />
     </Box>
   );
 };
